@@ -9,6 +9,9 @@ import org.thin.ugc.models.Content;
 import org.thin.ugc.models.mappers.ContentMapper;
 import org.thin.ugc.view.View;
 
+import java.math.BigInteger;
+import java.util.List;
+
 @RestController("content")
 @RequestMapping("/content")
 public class ContentController
@@ -22,7 +25,7 @@ public class ContentController
 
     @JsonView(View.Summary.class)
     @RequestMapping(path = {"/{cid}", "/{cid}/"}, method = RequestMethod.GET)
-    public Content index(@PathVariable(required = true) long cid)
+    public Content get(@PathVariable(required = true) BigInteger cid)
     {
         Content content = this.contentMapper.findByCid(cid);
 
@@ -37,5 +40,11 @@ public class ContentController
     public String post()
     {
         return "post content";
+    }
+
+    @RequestMapping(path = {"/", ""}, method = RequestMethod.GET)
+    public List<Content> index()
+    {
+        return null;
     }
 }
