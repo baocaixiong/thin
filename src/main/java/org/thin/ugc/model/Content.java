@@ -1,4 +1,4 @@
-package org.thin.ugc.models;
+package org.thin.ugc.model;
 
 import com.fasterxml.jackson.annotation.JsonView;
 import org.thin.ugc.view.View;

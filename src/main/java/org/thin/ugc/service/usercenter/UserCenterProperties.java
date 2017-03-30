@@ -1,4 +1,4 @@
-package org.thin.ugc.services.usercenter;
+package org.thin.ugc.service.usercenter;
 
 import org.springframework.boot.context.properties.ConfigurationProperties;
 

@@ -1,9 +1,9 @@
-package org.thin.ugc.services.usercenter;
+package org.thin.ugc.service.usercenter;
 
 /**
  * @author baocaixiong
  */
-public interface UserGetter
+public interface UserService
 {
     User getByIdentity(String identity);
 }

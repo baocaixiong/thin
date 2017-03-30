@@ -1,22 +1,17 @@
-package org.thin.ugc.services.usercenter;
+package org.thin.ugc.service.usercenter;
 
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
-import org.springframework.boot.autoconfigure.condition.ConditionalOnBean;
 import org.springframework.boot.autoconfigure.condition.ConditionalOnClass;
 import org.springframework.boot.context.properties.EnableConfigurationProperties;
 import org.springframework.context.annotation.Bean;
 import org.springframework.context.annotation.Configuration;
+import org.thin.ugc.service.usercenter.fromdb.FromDbUserGetter;
 
 import javax.annotation.PostConstruct;
-import javax.sql.DataSource;
-import java.net.URI;
-import java.net.URISyntaxException;
-import java.util.Objects;
 
 @Configuration
-@ConditionalOnClass({UserGetter.class})
-@ConditionalOnBean(DataSource.class)
+@ConditionalOnClass({UserService.class})
 @EnableConfigurationProperties(UserCenterProperties.class)
 public class UserCenterAutoConfiguration
 {
@@ -30,20 +25,17 @@ public class UserCenterAutoConfiguration
     }
 
     @PostConstruct
-    public void checkConfig() throws URISyntaxException
+    public void checkConfig()
     {
-        String getter = this.properties.getGetter();
-        if (getter.equals("db")) {
-            URI uri = new URI(properties.getDbGetterUrl());
-        }
+        logger.info("post usercenter bean constructed");
     }
 
     @Bean
-    public UserGetter userGetter()
+    public UserService getUserService()
     {
         String getter = this.properties.getGetter();
         if (getter.equals("db")) {
-
+            return new FromDbUserGetter();
         }
 
         return null;
