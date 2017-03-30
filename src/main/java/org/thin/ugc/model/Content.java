@@ -1,34 +1,20 @@
 package org.thin.ugc.model;
 
-import com.fasterxml.jackson.annotation.JsonView;
-import org.thin.ugc.view.View;
-
 import java.math.BigInteger;
 import java.sql.Timestamp;
 
 public class Content
 {
-    @JsonView(View.Summary.class)
     private BigInteger id;
-
     private Integer bizIdentity; // 业务标识符
-    @JsonView(View.Summary.class)
     private String userIdentity;
-    @JsonView(View.Summary.class)
     private String text;
-    @JsonView(View.Summary.class)
     private Boolean idWithImage; // 是否包含图片
-    @JsonView(View.Summary.class)
     private Boolean idDeleted; // 是否被用户删除
-    @JsonView(View.Summary.class)
     private Boolean idShield; // 是否被系统屏蔽
-    @JsonView(View.Summary.class)
     private BigInteger forefathersId; // 最原始的一条ContentId
-    @JsonView(View.Summary.class)
     private BigInteger parentId; // 回复的那条ContentId
-    @JsonView(View.Summary.class)
     private Timestamp createdTime;
-    @JsonView(View.Summary.class)
     private Timestamp updatedTime;
 
     public Content(BigInteger id,
@@ -73,5 +59,115 @@ public class Content
                 ", createdTime=" + createdTime +
                 ", updatedTime=" + updatedTime +
                 '}';
+    }
+
+    public BigInteger getId()
+    {
+        return id;
+    }
+
+    public void setId(BigInteger id)
+    {
+        this.id = id;
+    }
+
+    public Integer getBizIdentity()
+    {
+        return bizIdentity;
+    }
+
+    public void setBizIdentity(Integer bizIdentity)
+    {
+        this.bizIdentity = bizIdentity;
+    }
+
+    public String getUserIdentity()
+    {
+        return userIdentity;
+    }
+
+    public void setUserIdentity(String userIdentity)
+    {
+        this.userIdentity = userIdentity;
+    }
+
+    public String getText()
+    {
+        return text;
+    }
+
+    public void setText(String text)
+    {
+        this.text = text;
+    }
+
+    public Boolean getIdWithImage()
+    {
+        return idWithImage;
+    }
+
+    public void setIdWithImage(Boolean idWithImage)
+    {
+        this.idWithImage = idWithImage;
+    }
+
+    public Boolean getIdDeleted()
+    {
+        return idDeleted;
+    }
+
+    public void setIdDeleted(Boolean idDeleted)
+    {
+        this.idDeleted = idDeleted;
+    }
+
+    public Boolean getIdShield()
+    {
+        return idShield;
+    }
+
+    public void setIdShield(Boolean idShield)
+    {
+        this.idShield = idShield;
+    }
+
+    public BigInteger getForefathersId()
+    {
+        return forefathersId;
+    }
+
+    public void setForefathersId(BigInteger forefathersId)
+    {
+        this.forefathersId = forefathersId;
+    }
+
+    public BigInteger getParentId()
+    {
+        return parentId;
+    }
+
+    public void setParentId(BigInteger parentId)
+    {
+        this.parentId = parentId;
+    }
+
+    public Timestamp getCreatedTime()
+    {
+        return createdTime;
+    }
+
+    public void setCreatedTime(Timestamp createdTime)
+    {
+        this.createdTime = createdTime;
+    }
+
+    public Timestamp getUpdatedTime()
+    {
+        return updatedTime;
+    }
+
+    public void setUpdatedTime(Timestamp updatedTime)
+    {
+        this.updatedTime = updatedTime;
     }
 }

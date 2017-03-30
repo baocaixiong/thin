@@ -1,4 +1,4 @@
-package org.thin.common.utils;
+package org.thin.common.util;
 
 import java.util.regex.Pattern;
 

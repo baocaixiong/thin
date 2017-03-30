@@ -1,16 +1,16 @@
 package org.thin.ugc.controllers;
 
-import com.fasterxml.jackson.annotation.JsonView;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RestController;
 import org.springframework.web.bind.annotation.RequestMethod;
+import org.thin.common.constant.DataResult;
+import org.thin.common.constant.RestConst;
 import org.thin.ugc.model.Content;
 import org.thin.ugc.model.mappers.ContentMapper;
 import org.thin.ugc.service.usercenter.User;
 import org.thin.ugc.service.usercenter.UserService;
-import org.thin.ugc.view.View;
 
 import java.math.BigInteger;
 import java.util.List;
@@ -21,36 +21,35 @@ import java.util.List;
 public class ContentController
 {
     @Autowired
-    private UserService userGetter;
+    private UserService userService;
 
-    private final ContentMapper contentMapper;
+    @Autowired
+    private ContentMapper contentMapper;
 
-    public ContentController(ContentMapper contentMapper)
-    {
-        this.contentMapper = contentMapper;
-    }
-
-    @JsonView(View.Summary.class)
     @RequestMapping(path = {"/{cid}", "/{cid}/"}, method = RequestMethod.GET)
-    public Content get(@PathVariable(required = true) BigInteger cid)
+    public DataResult<Content> get(@PathVariable(required = true) BigInteger cid)
     {
         Content content = this.contentMapper.findByCid(cid);
 
-        User user = userGetter.getByIdentity(String.valueOf(cid));
+        User user = userService.getByIdentity(String.valueOf(cid));
 
         if (user != null) {
-            System.out.println(userGetter.getByIdentity("1").getName());
+            System.out.println(user.getName());
         }
 
         if (content != null) {
-            return content;
+            return new DataResult<>(content);
         }
 
-        return null;
+        DataResult<Content> result = new DataResult<>(null);
+
+        result.setRestCode(RestConst.RESULT_NOT_FOUND);
+
+        return result;
     }
 
-    @RequestMapping(path = {"/", ""}, method = RequestMethod.POST)
-    public String post()
+    @RequestMapping(path = {"/{cid}", "/{cid}/"}, method = RequestMethod.POST)
+    public String post(@PathVariable(required = true) BigInteger cid)
     {
         return "post content";
     }
