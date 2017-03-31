@@ -1,11 +1,19 @@
 package org.thin.ugc.service.imgservice;
 
-import org.thin.ugc.service.imgservice.FrontUpload;
-import org.thin.ugc.service.imgservice.ImgService;
-import org.thin.ugc.service.imgservice.ServerUpload;
+
+import com.qiniu.util.Auth;
 
 public class Qiniu implements ImgService, FrontUpload, ServerUpload
 {
+    private ImgServiceProperties properties;
+    private final Auth auth;
+
+    Qiniu(ImgServiceProperties properties)
+    {
+        this.properties = properties;
+        this.auth = Auth.create(properties.getQiNiuAccessKey(), properties.getQiNiuSecretKey());
+    }
+
     @Override
     public boolean validateIdentity(String identity)
     {
@@ -15,13 +23,12 @@ public class Qiniu implements ImgService, FrontUpload, ServerUpload
     @Override
     public String simpleFrontUploadToken(String bucketName)
     {
-        return "123123";
+        return auth.uploadToken(bucketName);
     }
 
     @Override
     public String frontUploadToken(String bucketName, String fileKey)
     {
-        return "123123";
-
+        return auth.uploadToken(bucketName, fileKey);
     }
 }

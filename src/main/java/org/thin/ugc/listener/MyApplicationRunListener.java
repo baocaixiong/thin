@@ -17,11 +17,12 @@ public class MyApplicationRunListener implements ApplicationListener
     public void onApplicationEvent(ApplicationEvent event)
     {
         if (event instanceof ApplicationPreparedEvent) {
-            System.out.println("++++++++catch ApplicationPreparedEvent event");
+//            System.out.println("++++++++catch ApplicationPreparedEvent event");
+            // pass
         }
 
         if (event.getSource() instanceof ConfigurableWebApplicationContext) {
-            System.out.println(" &&&&&&&&&&" + ((ConfigurableWebApplicationContext) event.getSource()).getServletContext());
+            // pass
         }
 
 //        System.out.println("-------catch " + event.getSource() + " event");

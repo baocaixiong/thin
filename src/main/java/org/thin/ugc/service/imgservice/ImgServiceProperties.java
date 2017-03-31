@@ -1,5 +1,6 @@
 package org.thin.ugc.service.imgservice;
 
+import org.springframework.beans.factory.annotation.Value;
 import org.springframework.boot.context.properties.ConfigurationProperties;
 
 @ConfigurationProperties(prefix = ImgServiceProperties.IMAGE_SERVICE_PREFIX)
@@ -9,8 +10,10 @@ public class ImgServiceProperties
 
     private String provider;
 
+    @Value("${imageservice.qiniu.access_key}")
     private String qiNiuAccessKey;
 
+    @Value("${imageservice.qiniu.secret_key}")
     private String qiNiuSecretKey;
 
     public String getProvider()

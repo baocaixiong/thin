@@ -34,7 +34,6 @@ public class UserCenterAutoConfiguration
     public UserService getUserService()
     {
         String getter = this.properties.getGetter();
-        System.out.println("===========" + getter);
         if (getter.equals("db")) {
             return new FromDbUserGetter();
         }

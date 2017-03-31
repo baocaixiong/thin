@@ -11,7 +11,6 @@ public class ImgServiceFactory
 
     public ImgService getImgService()
     {
-        System.out.println(properties);
         switch (properties.getProvider()) {
             case "qiniu":
                 return getQiNiuService();
@@ -23,6 +22,6 @@ public class ImgServiceFactory
 
     private Qiniu getQiNiuService()
     {
-        return new Qiniu();
+        return new Qiniu(properties);
     }
 }

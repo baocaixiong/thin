@@ -6,6 +6,7 @@ import org.thin.common.constant.DataResult;
 import org.thin.ugc.service.imgservice.FrontUpload;
 import org.thin.ugc.service.imgservice.ImgServiceFactory;
 
+import java.util.HashMap;
 import java.util.LinkedHashMap;
 import java.util.Map;
 
@@ -36,19 +37,13 @@ public class ContentImageController
         return "get image belongs to content id";
     }
 
-    /**
-     * 上传内容包含的图片
-     *
-     * @return
-     */
-    @RequestMapping(path = {"/", ""}, method = RequestMethod.GET)
-    public DataResult<Map<String, String>> commit()
+    @RequestMapping(path = {"/upload-token/{bucket}", "/upload-token/{bucket}/"}, method = RequestMethod.GET)
+    public DataResult<Map<String, String>> token(@PathVariable(required = true) String bucket)
     {
         FrontUpload imgService = (FrontUpload) imgServiceFactory.getImgService();
-        System.out.println("--------------" + imgService);
-        String token = imgService.simpleFrontUploadToken("test");
+        String token = imgService.simpleFrontUploadToken(bucket);
 
-        Map<String, String> tokenMap = new LinkedHashMap<>();
+        Map<String, String> tokenMap = new HashMap<>();
         tokenMap.put("token", token);
 
         return new DataResult<>(tokenMap);
