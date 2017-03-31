@@ -24,6 +24,6 @@ public class MyApplicationRunListener implements ApplicationListener
             System.out.println(" &&&&&&&&&&" + ((ConfigurableWebApplicationContext) event.getSource()).getServletContext());
         }
 
-        System.out.println("-------catch " + event.getSource() + " event");
+//        System.out.println("-------catch " + event.getSource() + " event");
     }
 }

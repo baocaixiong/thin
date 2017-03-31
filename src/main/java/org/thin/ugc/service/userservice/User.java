@@ -1,4 +1,4 @@
-package org.thin.ugc.service.usercenter;
+package org.thin.ugc.service.userservice;
 
 public class User
 {

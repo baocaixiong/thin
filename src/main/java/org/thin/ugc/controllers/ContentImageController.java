@@ -1,11 +1,21 @@
 package org.thin.ugc.controllers;
 
+import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.bind.annotation.*;
+import org.thin.common.constant.DataResult;
+import org.thin.ugc.service.imgservice.FrontUpload;
+import org.thin.ugc.service.imgservice.ImgServiceFactory;
+
+import java.util.LinkedHashMap;
+import java.util.Map;
 
 @RestController
 @RequestMapping(path = "/img")
 public class ContentImageController
 {
+    @Autowired
+    private ImgServiceFactory imgServiceFactory;
+
     /**
      * @param imgId
      * @return
@@ -29,12 +39,18 @@ public class ContentImageController
     /**
      * 上传内容包含的图片
      *
-     * @param cid content id
      * @return
      */
-    @RequestMapping(path = {"/{cid}", "/{cid}/"})
-    public String commit(@PathVariable(required = true) String cid)
+    @RequestMapping(path = {"/", ""}, method = RequestMethod.GET)
+    public DataResult<Map<String, String>> commit()
     {
-        return "commit image";
+        FrontUpload imgService = (FrontUpload) imgServiceFactory.getImgService();
+        System.out.println("--------------" + imgService);
+        String token = imgService.simpleFrontUploadToken("test");
+
+        Map<String, String> tokenMap = new LinkedHashMap<>();
+        tokenMap.put("token", token);
+
+        return new DataResult<>(tokenMap);
     }
 }

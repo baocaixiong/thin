@@ -1,4 +1,4 @@
-package org.thin.ugc.service.usercenter;
+package org.thin.ugc.service.userservice;
 
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
@@ -6,7 +6,7 @@ import org.springframework.boot.autoconfigure.condition.ConditionalOnClass;
 import org.springframework.boot.context.properties.EnableConfigurationProperties;
 import org.springframework.context.annotation.Bean;
 import org.springframework.context.annotation.Configuration;
-import org.thin.ugc.service.usercenter.fromdb.FromDbUserGetter;
+import org.thin.ugc.service.userservice.fromdb.FromDbUserGetter;
 
 import javax.annotation.PostConstruct;
 
@@ -27,13 +27,14 @@ public class UserCenterAutoConfiguration
     @PostConstruct
     public void checkConfig()
     {
-        logger.info("post usercenter bean constructed");
+        logger.info("post userservice bean constructed");
     }
 
     @Bean
     public UserService getUserService()
     {
         String getter = this.properties.getGetter();
+        System.out.println("===========" + getter);
         if (getter.equals("db")) {
             return new FromDbUserGetter();
         }

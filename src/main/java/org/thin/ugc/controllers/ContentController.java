@@ -9,8 +9,8 @@ import org.thin.common.constant.DataResult;
 import org.thin.common.constant.RestConst;
 import org.thin.ugc.model.Content;
 import org.thin.ugc.model.mappers.ContentMapper;
-import org.thin.ugc.service.usercenter.User;
-import org.thin.ugc.service.usercenter.UserService;
+import org.thin.ugc.service.userservice.User;
+import org.thin.ugc.service.userservice.UserService;
 
 import java.math.BigInteger;
 import java.util.List;

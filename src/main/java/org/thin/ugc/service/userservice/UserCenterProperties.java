@@ -1,11 +1,11 @@
-package org.thin.ugc.service.usercenter;
+package org.thin.ugc.service.userservice;
 
 import org.springframework.boot.context.properties.ConfigurationProperties;
 
 @ConfigurationProperties(prefix = UserCenterProperties.USER_CENTER_PREFIX)
 public class UserCenterProperties
 {
-    public static final String USER_CENTER_PREFIX = "usercenter";
+    public static final String USER_CENTER_PREFIX = "userservice";
 
     private String getter;
 
