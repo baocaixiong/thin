@@ -33,10 +33,6 @@ public class ContentController
 
         User user = userService.getByIdentity(String.valueOf(cid));
 
-        if (user != null) {
-            System.out.println(user.getName());
-        }
-
         if (content != null) {
             return new DataResult<>(content);
         }

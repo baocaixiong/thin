@@ -7,7 +7,6 @@ import org.thin.ugc.service.imgservice.FrontUpload;
 import org.thin.ugc.service.imgservice.ImgServiceFactory;
 
 import java.util.HashMap;
-import java.util.LinkedHashMap;
 import java.util.Map;
 
 @RestController
