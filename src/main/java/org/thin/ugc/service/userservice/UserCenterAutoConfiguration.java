@@ -34,10 +34,10 @@ public class UserCenterAutoConfiguration
     public UserService getUserService()
     {
         String getter = this.properties.getGetter();
-        if (getter.equals("db")) {
+        if (getter != null && getter.equals("db")) {
             return new FromDbUserGetter();
         }
 
-        return null;
+        return new NullUser();
     }
 }
