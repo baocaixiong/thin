@@ -1,0 +1,52 @@
+19:05:45.817 logback [main] INFO  org.thin.ugc.ThinApplication - Starting ThinApplication on baiduZhangMing12 with PID 34261 (/Users/baidu/IdeaProjects/thin/target/classes started by baidu in /Users/baidu/IdeaProjects/thin)
+19:05:45.821 logback [main] INFO  org.thin.ugc.ThinApplication - The following profiles are active: dev
+19:05:45.927 logback [main] INFO  o.s.b.c.e.AnnotationConfigEmbeddedWebApplicationContext - Refreshing org.springframework.boot.context.embedded.AnnotationConfigEmbeddedWebApplicationContext@70be0a2b: startup date [Fri Apr 21 19:05:45 CST 2017]; root of context hierarchy
+19:05:46.574 logback [background-preinit] INFO  o.h.validator.internal.util.Version - HV000001: Hibernate Validator 5.3.4.Final
+19:05:47.900 logback [main] INFO  o.s.c.s.PostProcessorRegistrationDelegate$BeanPostProcessorChecker - Bean 'org.springframework.transaction.annotation.ProxyTransactionManagementConfiguration' of type [org.springframework.transaction.annotation.ProxyTransactionManagementConfiguration$$EnhancerBySpringCGLIB$$95089fe1] is not eligible for getting processed by all BeanPostProcessors (for example: not eligible for auto-proxying)
+19:05:48.663 logback [main] INFO  o.s.b.c.e.t.TomcatEmbeddedServletContainer - Tomcat initialized with port(s): 8080 (http)
+19:05:48.695 logback [main] INFO  o.a.catalina.core.StandardService - Starting service Tomcat
+19:05:48.699 logback [main] INFO  o.a.catalina.core.StandardEngine - Starting Servlet Engine: Apache Tomcat/8.5.11
+19:05:48.866 logback [localhost-startStop-1] INFO  o.a.c.c.C.[Tomcat].[localhost].[/] - Initializing Spring embedded WebApplicationContext
+19:05:48.867 logback [localhost-startStop-1] INFO  o.s.web.context.ContextLoader - Root WebApplicationContext: initialization completed in 2941 ms
+19:05:49.125 logback [localhost-startStop-1] INFO  o.s.b.w.s.ServletRegistrationBean - Mapping servlet: 'statViewServlet' to [/druid/*]
+19:05:49.129 logback [localhost-startStop-1] INFO  o.s.b.w.s.ServletRegistrationBean - Mapping servlet: 'dispatcherServlet' to [/]
+19:05:49.134 logback [localhost-startStop-1] INFO  o.s.b.w.s.FilterRegistrationBean - Mapping filter: 'characterEncodingFilter' to: [/*]
+19:05:49.135 logback [localhost-startStop-1] INFO  o.s.b.w.s.FilterRegistrationBean - Mapping filter: 'hiddenHttpMethodFilter' to: [/*]
+19:05:49.135 logback [localhost-startStop-1] INFO  o.s.b.w.s.FilterRegistrationBean - Mapping filter: 'httpPutFormContentFilter' to: [/*]
+19:05:49.135 logback [localhost-startStop-1] INFO  o.s.b.w.s.FilterRegistrationBean - Mapping filter: 'requestContextFilter' to: [/*]
+19:05:49.135 logback [localhost-startStop-1] INFO  o.s.b.w.s.FilterRegistrationBean - Mapping filter: 'webStatFilter' to urls: [/*]
+19:05:49.136 logback [localhost-startStop-1] INFO  o.s.b.w.s.FilterRegistrationBean - Mapping filter: 'remoteIpFilter' to: [/*]
+19:05:49.136 logback [localhost-startStop-1] INFO  o.s.b.w.s.FilterRegistrationBean - Mapping filter: 'myFilter' to: [/*]
+19:05:49.173 logback [localhost-startStop-1] INFO  org.thin.ugc.filters.MyFilter - my filter initialize
+19:05:49.302 logback [main] INFO  o.t.c.s.u.UserCenterAutoConfiguration - post userservice bean constructed
+19:05:50.255 logback [main] INFO  o.s.w.s.m.m.a.RequestMappingHandlerAdapter - Looking for @ControllerAdvice: org.springframework.boot.context.embedded.AnnotationConfigEmbeddedWebApplicationContext@70be0a2b: startup date [Fri Apr 21 19:05:45 CST 2017]; root of context hierarchy
+19:05:50.351 logback [main] INFO  o.s.w.s.m.m.a.RequestMappingHandlerMapping - Mapped "{[/content/ || /content],methods=[GET]}" onto public java.util.List<org.thin.ugc.model.Content> org.thin.ugc.controllers.ContentController.index()
+19:05:50.353 logback [main] INFO  o.s.w.s.m.m.a.RequestMappingHandlerMapping - Mapped "{[/content/{cid} || /content/{cid}/],methods=[GET]}" onto public org.thin.common.constant.DataResult<org.thin.ugc.model.Content> org.thin.ugc.controllers.ContentController.get(java.math.BigInteger)
+19:05:50.353 logback [main] INFO  o.s.w.s.m.m.a.RequestMappingHandlerMapping - Mapped "{[/content/{cid} || /content/{cid}/],methods=[POST]}" onto public java.lang.String org.thin.ugc.controllers.ContentController.post(java.math.BigInteger)
+19:05:50.358 logback [main] INFO  o.s.w.s.m.m.a.RequestMappingHandlerMapping - Mapped "{[/img/{imgId} || /img/{imgId}/],methods=[GET]}" onto public java.lang.String org.thin.ugc.controllers.ContentImageController.index(java.lang.String)
+19:05:50.359 logback [main] INFO  o.s.w.s.m.m.a.RequestMappingHandlerMapping - Mapped "{[/img/{imgId}/content || /img/{imgId}/content/],methods=[GET]}" onto public java.lang.String org.thin.ugc.controllers.ContentImageController.origin(java.lang.String)
+19:05:50.359 logback [main] INFO  o.s.w.s.m.m.a.RequestMappingHandlerMapping - Mapped "{[/img/upload-token/{bucket} || /img/upload-token/{bucket}/],methods=[GET]}" onto public org.thin.common.constant.DataResult<java.util.Map<java.lang.String, java.lang.String>> org.thin.ugc.controllers.ContentImageController.token(java.lang.String)
+19:05:50.360 logback [main] INFO  o.s.w.s.m.m.a.RequestMappingHandlerMapping - Mapped "{[/tag/{targetId} || /tag/{targetId}/]}" onto public java.lang.String org.thin.ugc.controllers.TagController.index(java.lang.String)
+19:05:50.363 logback [main] INFO  o.s.w.s.m.m.a.RequestMappingHandlerMapping - Mapped "{[/error]}" onto public org.springframework.http.ResponseEntity<java.util.Map<java.lang.String, java.lang.Object>> org.springframework.boot.autoconfigure.web.BasicErrorController.error(javax.servlet.http.HttpServletRequest)
+19:05:50.363 logback [main] INFO  o.s.w.s.m.m.a.RequestMappingHandlerMapping - Mapped "{[/error],produces=[text/html]}" onto public org.springframework.web.servlet.ModelAndView org.springframework.boot.autoconfigure.web.BasicErrorController.errorHtml(javax.servlet.http.HttpServletRequest,javax.servlet.http.HttpServletResponse)
+19:05:50.397 logback [main] INFO  o.s.w.s.h.SimpleUrlHandlerMapping - Mapped URL path [/webjars/**] onto handler of type [class org.springframework.web.servlet.resource.ResourceHttpRequestHandler]
+19:05:50.397 logback [main] INFO  o.s.w.s.h.SimpleUrlHandlerMapping - Mapped URL path [/**] onto handler of type [class org.springframework.web.servlet.resource.ResourceHttpRequestHandler]
+19:05:50.450 logback [main] INFO  o.s.w.s.h.SimpleUrlHandlerMapping - Mapped URL path [/**/favicon.ico] onto handler of type [class org.springframework.web.servlet.resource.ResourceHttpRequestHandler]
+19:05:50.954 logback [main] INFO  o.s.j.e.a.AnnotationMBeanExporter - Registering beans for JMX exposure on startup
+19:05:51.056 logback [main] INFO  o.a.coyote.http11.Http11NioProtocol - Initializing ProtocolHandler ["http-nio-8080"]
+19:05:51.076 logback [main] INFO  o.a.coyote.http11.Http11NioProtocol - Starting ProtocolHandler [http-nio-8080]
+19:05:51.131 logback [main] INFO  o.a.tomcat.util.net.NioSelectorPool - Using a shared selector for servlet write/read
+19:05:51.167 logback [main] INFO  o.s.b.c.e.t.TomcatEmbeddedServletContainer - Tomcat started on port(s): 8080 (http)
+19:05:51.175 logback [main] INFO  org.thin.ugc.ThinApplication - Started ThinApplication in 6.637 seconds (JVM running for 8.012)
+19:05:56.229 logback [http-nio-8080-exec-1] INFO  o.a.c.c.C.[Tomcat].[localhost].[/] - Initializing Spring FrameworkServlet 'dispatcherServlet'
+19:05:56.230 logback [http-nio-8080-exec-1] INFO  o.s.web.servlet.DispatcherServlet - FrameworkServlet 'dispatcherServlet': initialization started
+19:05:56.252 logback [http-nio-8080-exec-1] INFO  o.s.web.servlet.DispatcherServlet - FrameworkServlet 'dispatcherServlet': initialization completed in 22 ms
+19:05:56.273 logback [http-nio-8080-exec-1] INFO  org.thin.ugc.filters.MyFilter - doing my filter.
+19:05:56.288 logback [http-nio-8080-exec-1] INFO  o.t.u.i.CheckUserWhetherLogined - before handler interceptor
+19:05:57.132 logback [http-nio-8080-exec-1] INFO  o.t.u.i.CheckUserWhetherLogined - post handler interceptor
+19:05:57.133 logback [http-nio-8080-exec-1] WARN  o.t.u.i.CheckUserWhetherLogined - 校验是否登录
+19:05:57.133 logback [http-nio-8080-exec-1] INFO  o.t.u.i.CheckUserWhetherLogined - after completion interceptor
+19:05:57.670 logback [http-nio-8080-exec-2] INFO  org.thin.ugc.filters.MyFilter - doing my filter.
+19:07:01.045 logback [Thread-3] INFO  o.s.b.c.e.AnnotationConfigEmbeddedWebApplicationContext - Closing org.springframework.boot.context.embedded.AnnotationConfigEmbeddedWebApplicationContext@70be0a2b: startup date [Fri Apr 21 19:05:45 CST 2017]; root of context hierarchy
+19:07:01.047 logback [Thread-3] INFO  o.s.j.e.a.AnnotationMBeanExporter - Unregistering JMX-exposed beans on shutdown
+19:07:01.253 logback [localhost-startStop-2] INFO  org.thin.ugc.filters.MyFilter - destroy my filter

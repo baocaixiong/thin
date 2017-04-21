@@ -1,5 +1,7 @@
 package org.thin.ugc.controllers;
 
+import org.slf4j.Logger;
+import org.slf4j.LoggerFactory;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.RequestMapping;
@@ -21,6 +23,8 @@ import java.util.List;
 @RequestMapping("/content")
 public class ContentController
 {
+    private static Logger logger = LoggerFactory.getLogger(ContentController.class);
+
     @Autowired
     private UserService userService;
 
@@ -34,6 +38,8 @@ public class ContentController
         Content content = this.contentMapper.findByCid(cid);
 
         User user = userService.getByIdentity(String.valueOf(cid));
+
+        logger.info(user.toString());
 
         if (content != null) {
             return new DataResult<>(content);
