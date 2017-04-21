@@ -5,12 +5,13 @@ import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RestController;
 import org.springframework.web.bind.annotation.RequestMethod;
+import org.thin.common.annotation.CheckLogined;
 import org.thin.common.constant.DataResult;
 import org.thin.common.constant.RestConst;
 import org.thin.ugc.model.Content;
 import org.thin.ugc.model.mappers.ContentMapper;
-import org.thin.ugc.service.userservice.User;
-import org.thin.ugc.service.userservice.UserService;
+import org.thin.common.service.userservice.User;
+import org.thin.common.service.userservice.UserService;
 
 import java.math.BigInteger;
 import java.util.List;
@@ -27,6 +28,7 @@ public class ContentController
     private ContentMapper contentMapper;
 
     @RequestMapping(path = {"/{cid}", "/{cid}/"}, method = RequestMethod.GET)
+    @CheckLogined
     public DataResult<Content> get(@PathVariable(required = true) BigInteger cid)
     {
         Content content = this.contentMapper.findByCid(cid);

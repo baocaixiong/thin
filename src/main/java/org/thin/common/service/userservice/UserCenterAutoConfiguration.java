@@ -1,4 +1,4 @@
-package org.thin.ugc.service.userservice;
+package org.thin.common.service.userservice;
 
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
@@ -6,7 +6,7 @@ import org.springframework.boot.autoconfigure.condition.ConditionalOnClass;
 import org.springframework.boot.context.properties.EnableConfigurationProperties;
 import org.springframework.context.annotation.Bean;
 import org.springframework.context.annotation.Configuration;
-import org.thin.ugc.service.userservice.fromdb.FromDbUserGetter;
+import org.thin.common.service.userservice.fromdb.FromDbUserGetter;
 
 import javax.annotation.PostConstruct;
 

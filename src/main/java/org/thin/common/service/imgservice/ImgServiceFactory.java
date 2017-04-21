@@ -1,4 +1,4 @@
-package org.thin.ugc.service.imgservice;
+package org.thin.common.service.imgservice;
 
 public class ImgServiceFactory
 {

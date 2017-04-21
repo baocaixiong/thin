@@ -3,8 +3,8 @@ package org.thin.ugc.controllers;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.bind.annotation.*;
 import org.thin.common.constant.DataResult;
-import org.thin.ugc.service.imgservice.FrontUpload;
-import org.thin.ugc.service.imgservice.ImgServiceFactory;
+import org.thin.common.service.imgservice.FrontUpload;
+import org.thin.common.service.imgservice.ImgServiceFactory;
 
 import java.util.HashMap;
 import java.util.Map;

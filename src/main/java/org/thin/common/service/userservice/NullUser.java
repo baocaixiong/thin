@@ -1,4 +1,4 @@
-package org.thin.ugc.service.userservice;
+package org.thin.common.service.userservice;
 
 /**
  * @author zhangming12

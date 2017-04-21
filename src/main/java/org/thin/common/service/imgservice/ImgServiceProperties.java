@@ -1,4 +1,4 @@
-package org.thin.ugc.service.imgservice;
+package org.thin.common.service.imgservice;
 
 import org.springframework.beans.factory.annotation.Value;
 import org.springframework.boot.context.properties.ConfigurationProperties;

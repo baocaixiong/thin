@@ -1,4 +1,4 @@
-package org.thin.ugc.service.imgservice;
+package org.thin.common.service.imgservice;
 
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;

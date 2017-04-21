@@ -1,7 +1,7 @@
-package org.thin.ugc.service.userservice.fromdb;
+package org.thin.common.service.userservice.fromdb;
 
-import org.thin.ugc.service.userservice.User;
-import org.thin.ugc.service.userservice.UserService;
+import org.thin.common.service.userservice.User;
+import org.thin.common.service.userservice.UserService;
 
 public class FromDbUserGetter implements UserService
 {

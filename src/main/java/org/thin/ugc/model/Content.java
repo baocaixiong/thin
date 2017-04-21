@@ -46,7 +46,7 @@ public class Content
     @Override
     public String toString()
     {
-        return "Content{" +
+        return "ContentWithUser{" +
                 "id=" + id +
                 ", bizIdentity=" + bizIdentity +
                 ", userIdentity='" + userIdentity + '\'' +
